@@ -1,0 +1,60 @@
+dataset: 'mnist'
+seed: 1337
+exp_name: 'mnist_rotation'
+variant_name: 'exp_1'
+# When you want to have many variants
+# of the same experiment
+
+config: 'data/generator/config/mnist.json'
+# config corresponding to the prior
+logdir: 'logs/'
+device: 'cuda'
+
+# training
+print_freq: 40
+batch_size: 50
+# need a high batch size for a good estimate of mmd
+num_real_images: 200
+max_epochs: 2000
+epoch_length: 1000 #number of samples that constitute one epoch
+train_reconstruction: true
+freeze_encoder: true
+reconstruction_epochs: 7
+use_dist_loss: true
+use_task_loss: true
+moving_avg_alpha: 0.7 # moving_avg_alpha for baseline
+
+# MMD
+mmd_dims: [64, 192]
+# sizes of layers of inception to use for MMD. Check 
+# the inception file for possible values
+mmd_resize_input: false
+
+optim:
+  lr: 0.001
+  lr_decay: 200 # number of epochs to decay after
+  lr_decay_gamma: 0.5 # gamma to decay
+  weight_decay: 0.00001
+
+weight:
+  class: 0.1 # weight for class during reconstruction training
+  dist_mmd: 100.0 # multiplier for mmd
+
+task:
+  val_root: 'data/datagen/mnist/target_rot/'
+  # data corresponding to the target configuration
+  # usually you would generate one small version
+  # and one large version of the target
+  # Use the small version while training and 
+  # the large version to report final results
+  # this is not included in this code for simplicity
+  # but is easy to add by editing the test 
+  # function in the task network to report two
+  # accuracies, out of which one would be used to train
+  device: 'cuda'
+  print_freq: 100
+  freeze_encoder: true
+  batch_size: 8
+  input_dim: [32, 32]
+  epochs: 2
+  dataset: 'mnist'

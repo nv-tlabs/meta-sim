@@ -1,0 +1,8 @@
+env
+*.swp
+*.pyc
+*__pycache__
+.vscode
+data/datagen
+logs
+data/assets
