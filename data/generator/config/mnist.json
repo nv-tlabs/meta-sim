@@ -1,0 +1,66 @@
+{
+  "class": ["Deterministic", "Image"],
+  "attributes": {
+    "features": ["class", "size_x", "size_y", "loc_x", "loc_y", "yaw"],
+    "mutable": ["loc_x", "loc_y", "yaw"],
+    "dataset": "mnist",
+    "immutable": true,
+    "directed" : true,
+    "size": [32,32],
+    "num_samples":1000,
+    "asset_dir"  : "data/assets/mnist/train/",
+    "output_dir" : "data/datagen/mnist/init_rot/",
+    "size_y": ["Deterministic", 32, 0, 32],
+    "size_x": ["Deterministic", 32, 0, 32],
+    "loc_x":  ["Deterministic", 0, 0, 32],
+    "loc_y":  ["Deterministic", 0, 0, 32],
+    "yaw":    ["Deterministic", 0, 0, 360],
+    "texture":["Deterministic", 0, 0, 255]
+  },
+  "num_child" : ["Deterministic", 2],
+  "child": [
+    {
+      "class": ["Deterministic", "Background"],
+      "attributes": {
+        "immutable": true,
+        "size_y": ["Deterministic", 32, 0, 32],
+        "size_x": ["Deterministic", 32, 0, 32],
+        "loc_x":  ["Deterministic", 0, 0, 32],
+        "loc_y":  ["Deterministic", 0, 0, 32],
+        "yaw":    ["Deterministic", 0, 0, 360],
+        "texture":["Gaussian", 0, 5, 255]
+      },
+      "num_child" : ["Deterministic", 0],
+      "child": []
+    },
+    {
+      "class": ["Deterministic","Scene"],
+      "attributes": {
+        "immutable": true,
+        "size_y": ["Deterministic", 32, 0, 32],
+        "size_x": ["Deterministic", 32, 0, 32],
+        "loc_x":  ["Deterministic", 0, 0, 32],
+        "loc_y":  ["Deterministic", 0, 0, 32],
+        "yaw":    ["Deterministic", 0, 0, 360],
+        "texture":["Deterministic", 0, 0, 255]    
+       },
+      "num_child" : ["Deterministic", 1],
+      "child": [
+        {
+          "class":["Random", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]],
+          "attributes": {
+            "immutable": false,
+            "size_y": ["Deterministic", 28, 0, 32],
+            "size_x": ["Deterministic", 28, 0, 32],
+            "loc_x": ["Deterministic" , 16, 0, 32],
+            "loc_y": ["Deterministic" , 16, 0, 32],
+            "yaw": ["Gaussian", 0, 10, 360],
+            "texture": "Random"
+          },
+          "num_child" : ["Deterministic", 0],
+          "child": []
+        }
+      ]
+    }
+  ]
+}
