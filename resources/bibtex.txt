@@ -1,0 +1,6 @@
+@article{kar2019metasim,
+title={Meta-Sim: Learning to Generate Synthetic Datasets},
+author={Kar, Amlan and Prakash, Aayush and Liu, Ming-Yu and Cameracci, Eric and Yuan, Justin and Rusiniak, Matt and Acuna, David and Torralba, Antonio and Fidler, Sanja},
+journal={arXiv preprint arXiv:1806.02918},
+year={2019}
+}

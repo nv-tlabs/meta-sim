@@ -1,0 +1,395 @@
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-137506474-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-137506474-1');
+</script>
+
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+</head>
+
+<style type="text/css">
+    body {
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight:300;
+        font-size:18px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 1100px;
+    }
+
+    h1 {
+        font-weight:300;
+        margin: 0.4em;
+    }
+
+    p {
+        margin: 0.2em;
+    }
+
+    .disclaimerbox {
+        background-color: #eee;
+        border: 1px solid #eeeeee;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+        padding: 20px;
+    }
+
+    video.header-vid {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    img.header-img {
+        height: 140px;
+        border: 1px solid black;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    img.rounded {
+        border: 1px solid #eeeeee;
+        border-radius: 10px ;
+        -moz-border-radius: 10px ;
+        -webkit-border-radius: 10px ;
+    }
+
+    a:link,a:visited
+    {
+        color: #1367a7;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #208799;
+    }
+
+    td.dl-link {
+        height: 160px;
+        text-align: center;
+        font-size: 22px;
+    }
+
+    .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow:
+                0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+                5px 5px 0 0px #fff, /* The second layer */
+                5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+                10px 10px 0 0px #fff, /* The third layer */
+                10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+                15px 15px 0 0px #fff, /* The fourth layer */
+                15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+                20px 20px 0 0px #fff, /* The fifth layer */
+                20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+                25px 25px 0 0px #fff, /* The fifth layer */
+                25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+        margin-left: 10px;
+        margin-right: 45px;
+    }
+
+
+    .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+        box-shadow:
+                0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+                5px 5px 0 0px #fff, /* The second layer */
+                5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+                10px 10px 0 0px #fff, /* The third layer */
+                10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+        margin-top: 5px;
+        margin-left: 10px;
+        margin-right: 30px;
+        margin-bottom: 5px;
+    }
+
+    .vert-cent {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    hr
+    {
+        margin: 0;
+        border: 0;
+        height: 1.5px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+</style>
+
+<html>
+  <head>
+        <title>Meta-Sim</title>
+        <meta property="og:title" content="polyrnn++" />
+  </head>
+
+  <body>
+    <br>
+    <center>
+    <span style="font-size:42px">Meta Sim</span> 
+    <br>
+    <span style="font-size:36px"> Learning to Generate Synthetic Datasets</span>
+    </center>
+
+    <br>
+    <table align=center width=900px>
+    <tr>
+        <td align=center width=100px>
+            <center>
+            <span style="font-size:20px"><a href="http://www.cs.toronto.edu/~amlan/">Amlan Kar</a><sup> 1,2,3</sup></span>
+            </center>
+        </td>
+        <td align=center width=100px>
+            <center>
+            <span style="font-size:20px"><a href="https://www.linkedin.com/in/aayush-prakash-0798142">Aayush Prakash</a><sup>1</sup></span>
+            </center>
+        </td>
+        <td align=center width=100px>
+            <center>
+            <span style="font-size:20px"><a href="http://mingyuliu.net/">Ming-Yu Liu</a><sup>1</sup></span>
+            </center>
+        </td>
+        <td align=center width=100px>
+                <center>
+                <span style="font-size:20px"><a href="https://www.linkedin.com/in/eric-cameracci-b926505a">Eric Cameracci</a><sup>1</sup></span>
+                </center>
+        </td>    
+        <td align=center width=100px>
+                <center>
+                <span style="font-size:20px"><a href="https://www.linkedin.com/in/justin-yuan">Justin Yuan</a><sup>1</sup></span>
+                </center>
+        </td>    
+    </tr>
+    </table>
+    <br/>
+    <table align=center width=900px>
+    <tr>
+        <td align=center width=100px>
+                <center>
+                <span style="font-size:20px"><a href="https://www.linkedin.com/in/mrusiniak">Matt Rusiniak</a><sup>1</sup></span>
+                </center>
+        </td>    
+        <td align=center width=100px>
+                <center>
+                <span style="font-size:20px"><a href="http://www.cs.toronto.edu/~davidj/">David Acuna</a><sup>1,2,3</sup></span>
+                </center>
+        </td>    
+        <td align=center width=100px>
+                <center>
+                <span style="font-size:20px"><a href="http://web.mit.edu/torralba/www/">Antonio Torralba</a><sup>4</sup></span>
+                </center>
+        </td>            
+        <td align=center width=100px>
+            <center>
+            <span style="font-size:20px"><a href="http://www.cs.toronto.edu/~fidler/">Sanja Fidler</a><sup>1,2,3</sup></span>
+            </center>
+        </td>
+     </tr>
+    </table>
+
+    <br>
+    <table align=center width=900px>
+       <tr>
+        <td align=center width=100px>
+        <center>
+        <span style="font-size:20px"><sup>1</sup>NVIDIA</span>
+        </center>
+        </td>
+        <td align=center width=100px>
+            <center>
+            <span style="font-size:20px"><sup>2</sup>University of Toronto</span>
+            </center>
+        </td>
+        <td align=center width=100px>
+            <center>
+            <span style="font-size:20px"><sup>3</sup>Vector Institute</span>
+            </center>
+        </td>
+        <td align=center width=100px>
+            <center>
+            <span style="font-size:20px"><sup>4</sup>MIT</span>
+            </center>
+        </td>
+     </tr>
+    </table>
+    
+    <!-- <table align=center width=700px>
+       <tr>
+        <td align=center width=100px>
+        <center>
+        <span style="font-size:20px;color:red"><b></span>
+        </center>
+        </td>
+     </tr>
+    </table> -->
+
+            <br>
+            <table align=center width=900px>
+                <tr>
+                     <td width=700px>
+                        <center>
+                            <a href="#"><img src = "./resources/meta-sim-gif.gif" width="700px" height="220px"></img>                        
+                        </center>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=700px>
+                      <center>
+                          <a href="#"><img src = "./resources/meta-sim-teaser.jpg" width="700px" height="280px"></img></href></a><br>
+                    </center>
+                    </td>
+                    <!--  -->
+                </tr>
+            </table>
+            <table align=center width=900px></table>
+                <tr>
+                    <td width=600px>
+                    <br>  
+                    <center>
+                          <!--  -->
+                    </center>
+                    </td>
+                </tr>
+                <tr>
+                    <td width=600px>
+                        <br>
+                        <p align="justify" style="font-size: 18px">
+                            Training models to high-end performance requires availability of large labeled datasets, which are expensive to get. The goal of our work is to automatically synthesize labeled datasets that are relevant for a downstream task. We propose Meta-Sim, which learns a generative model of synthetic scenes, and obtain images as well as its corresponding ground-truth via a graphics engine. We parametrize our dataset generator with a neural network, which learns to modify attributes of scene graphs obtained from probabilistic scene grammars, so as to minimize the distribution gap between its rendered outputs and target data. If the real dataset comes with a small labeled validation set, we additionally aim to optimize a meta-objective, i.e. downstream task performance. Experiments show that the proposed method can greatly improve content generation quality over a human-engineered probabilistic scene grammar, both qualitatively and quantitatively as measured by performance on a downstream task.
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                </tr>
+            </table>
+
+          <br>
+          <hr>
+            <table align=center width=700>
+             <center><h1>News</h1></center>
+                <tr>
+                <ul>
+                <li>[April 2019] Paper released on <a href="http://arxiv.org/abs/1904.07934">arXiv</a></li>
+                </ul>
+                </tr>
+            </table>
+         <br>
+         <hr>
+         <!-- <table align=center width=550px> -->
+            <table align=center width=700>
+             <center><h1>Paper</h1></center>
+                <tr>
+                  <td><a href="http://arxiv.org/abs/1904.07934" target="_blank"><img style="height:180px; border: solid; border-radius:30px;" src="./resources/paper.jpg"/></a></td>
+                  <td><span style="font-size:18px">Kar et al.
+                    <br><br>
+                    Meta-Sim: Learning to Generate Synthetic Datasets
+                    <br><br>
+                    arXiv, 2019
+                    <br>
+                    </td>
+              </tr>
+            </table>
+            <br>
+
+            <table align=center width=700px>
+              <tr>
+                  <td>  
+                    <span style="font-size:18px"><center>
+                      <a href="http://arxiv.org/abs/1904.07934">[Preprint]</a>
+                    </center></td>
+
+                  <td><span style="font-size:18px"><center>
+                      <a href="./resources/bibtex.txt">[Bibtex]</a>
+                    </center></td>
+                  
+                  <!-- <td><span style="font-size:18px"><center> -->
+                      <!-- <a href="https://www.youtube.com/watch ">[Video]</a> -->
+                    <!-- </center></td> -->
+
+   
+              </tr>
+              <tr>
+           
+              </tr>
+            </table>
+            <br>
+        <hr>
+
+         <center><h1>Training Stages</h1></center>
+            <table align=center width=1000px>
+                <tr>
+                        <center>
+                          <a href='#'><img class="round" style="height:300" src="./resources/training.jpg"/></a>
+                        </center>
+              </tr>
+          </table>
+
+            <br>
+          <hr>
+
+          <center><h1> Results</h1></center> <br>
+
+          <table align=center width=900px>
+              <tr>
+                  <td width=100px>
+                    <center>
+                        <a href="#"><img src = "./resources/qual.jpg" width="900px"></img></a><br>
+                    </center>
+                  </td>
+                 
+            <tr>
+                <td>
+                    <center>
+                    <span style="font-size:14px">
+                    (left) samples from our prob. grammar, (middle) Meta-Sim’s corresponding samples, (right) random samples from KITTI
+                    </span>
+                    </center>
+                </td>
+                
+            </tr>
+            <tr>
+                <td colspan='2'>
+                    <center>
+                        <a href="#"><img src = "./resources/car8.gif" width="900px"></img></a><br>
+                    </center>
+                </td>
+            </tr>
+            <tr>
+                <td colspan='2'>
+                    <center>
+                        <a href="#"><img src = "./resources/car40.gif" width="900px"></img></a><br>
+                    </center>
+                </td>
+            </tr>
+            
+            <tr>
+                <td colspan='2'>
+                    <center>
+                    <span style="font-size:14px">
+                    Visualization of Meta-Sim output through training
+                    </span>
+                    </center>
+                </td>
+            </tr>
+
+          </table>
+
+          <hr>
+          <br>
+          <table style="font-size:14px" align=center>
+          <tr>
+          <td>
+            This webpage template was borrowed from <a href='https://richzhang.github.io/colorization/'>Richard Zhang</a>.
+          </td>
+          </tr>
+          </table>
+
+</body>
+</html>
