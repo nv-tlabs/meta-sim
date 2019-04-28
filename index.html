@@ -134,9 +134,9 @@
   <body>
     <br>
     <center>
-    <span style="font-size:42px">Meta Sim</span> 
+    <span style="font-size:44px">Meta Sim</span> 
     <br>
-    <span style="font-size:36px"> Learning to Generate Synthetic Datasets</span>
+    <span style="font-size:38px"> Learning to Generate Synthetic Datasets</span>
     </center>
 
     <br>
@@ -149,7 +149,7 @@
         </td>
         <td align=center width=100px>
             <center>
-            <span style="font-size:20px"><a href="https://www.linkedin.com/in/aayush-prakash-0798142">Aayush Prakash</a><sup>1</sup></span>
+            <span style="font-size:20px"><a href="https://www.linkedin.com/in/aayush-prakash-0798142b/">Aayush Prakash</a><sup>1</sup></span>
             </center>
         </td>
         <td align=center width=100px>
@@ -234,20 +234,32 @@
             <br>
             <table align=center width=900px>
                 <tr>
-                     <td width=700px>
+                    <td width="900px">
                         <center>
-                            <a href="#"><img src = "./resources/meta-sim-gif.gif" width="700px" height="220px"></img>                        
+                        <video width="380" controls>
+                                <source src="resources/meta-sim-video.mp4" type="video/mp4"/>
+                        </video>                                      
+    
+                        <a href="#"><img src = "./resources/meta-sim-teaser.png" width="490px" height="220px"></img>                        
+                        </center>
+                    </td>    
+                </tr>
+                <!-- <tr>
+                    <td width=700px>
+                        <center>
+                          <a href="#"><img src = "./resources/meta-sim-teaser.png" width="700px" height="280px"></img></href></a><br>
                         </center>
                     </td>
-                </tr>
+                </tr> -->
                 <tr>
-                    <td width=700px>
-                      <center>
-                          <a href="#"><img src = "./resources/meta-sim-teaser.png" width="700px" height="280px"></img></href></a><br>
-                    </center>
+                    <td width=900px>
+                        <center>
+                            <a href="#"><img src = "./resources/meta-sim-gif.gif" width="870px"></img>                        
+                        </center>
                     </td>
                     <!--  -->
                 </tr>
+
             </table>
             <table align=center width=900px></table>
                 <tr>
@@ -336,59 +348,111 @@
 
           <center><h1> Results</h1></center> <br>
 
-          <table align=center width=900px>
+        <table align=center width=900px>
               <tr>
-                  <td width=100px>
+                  <table align=center width='900px' margin:auto>
+                    <tr width=900px>
+                        <td width='33%' style='text-align: center; font-size:150%'>Input Prob. Grammar</td>
+                        <td width='33%' style='text-align: center; font-size:150%'>Meta-Sim</td>
+                        <td width='33%' style='text-align: center; font-size:150%'>KITTI Dataset</td>
+
+                    </tr>
+
+                  </table>
+                  <td>
                     <center>
                         <a href="#"><img src = "./resources/qual.jpg" width="900px"></img></a><br>
                     </center>
                   </td>
-                 
+                  <tr>
+                        <td>
+                            <center>
+                            <span style='text-align: center; font-size:90%'>
+                            (left) samples from our prob. grammar, (middle) Meta-Sim’s corresponding samples, (right) random samples from KITTI
+                            </span>
+                            </center>
+                        </td>
+                        
+                    </tr>
+        </table>
+
+        <br/><br/>
+        <table align=center width=900px>        
             <tr>
                 <td>
-                    <center>
-                    <span style="font-size:14px">
-                    (left) samples from our prob. grammar, (middle) Meta-Sim’s corresponding samples, (right) random samples from KITTI
-                    </span>
-                    </center>
-                </td>
-                
-            </tr>
-            <tr>
-                <td colspan='2'>
                     <center>
                         <a href="#"><img src = "./resources/car8.gif" width="900px"></img></a><br>
                     </center>
                 </td>
             </tr>
             <tr>
-                <td colspan='2'>
+                <td>
                     <center>
                         <a href="#"><img src = "./resources/car40.gif" width="900px"></img></a><br>
                     </center>
                 </td>
             </tr>
             <tr>
-                <td colspan='2'>
+                <td>
                     <center>
-                    <span style="font-size:14px">
-                    Visualization of Meta-Sim output through training
+                    <span style="text-align: center; font-size:110%">
+                    Visualization of Meta-Sim's outputs through its training
                     </span>
                     </center>
                 </td>
             </tr>
 
-          </table>
+        </table>
 
-          <hr>
-          <br>
-          <table style="font-size:14px" align=center>
-          <tr>
-          <td>
+        <br/><br/>
+        <table align=center width=900px>        
+            <tr>
+                <td>
+                    <center>
+                        <img src='./resources/detections/baseline/86.jpg' width='440px'/>
+                        <img src='./resources/detections/metasim/86.jpg' width='440px'/>
+                    </center>
+                </td>
+            <tr>
+            <tr>
+                <td>
+                    <center>
+                        <img src='./resources/detections/baseline/114.jpg' width='440px'/>
+                        <img src='./resources/detections/metasim/114.jpg' width='440px'/>
+                    </center>
+                </td>
+            <tr>
+
+            <tr>
+                <td>
+                    <center>
+                        <img src='./resources/detections/baseline/163.jpg' width='440px'/>
+                        <img src='./resources/detections/metasim/163.jpg' width='440px'/>
+                    </center>
+                </td>
+            <tr>
+            <tr>
+                <td>
+                    <center>
+                    <span style="text-align: center; font-size:110%">
+                    (Left) Detection results after training on our prob. grammar vs. 
+                    (Right) Detection results after training with meta-sim
+                    </span>
+                    </center>
+                </td>
+            </tr>
+                                    
+        </table>
+
+        <hr>
+        <br>
+        <table style="font-size:14px" align=center>
+        <tr>
+        <td>
             This webpage template was borrowed from <a href='https://richzhang.github.io/colorization/'>Richard Zhang</a>.
-          </td>
-          </tr>
-          </table>
+        </td>
+        </tr>
+        </table>
 
 </body>
 </html>
